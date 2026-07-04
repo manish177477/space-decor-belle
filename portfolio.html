@@ -98,6 +98,133 @@
       transition:.28s ease;
     }
     .glass-float-btn:hover { transform:translateX(-4px); border-color:rgba(255,255,255,.4); }
+
+
+
+    .trusted-partners-section{
+  background:
+    radial-gradient(circle at top left, rgba(207,166,58,.12), transparent 35%),
+    linear-gradient(180deg,#fff,#fafafa);
+  border-top:1px solid rgba(207,166,58,.25);
+  border-bottom:1px solid rgba(207,166,58,.25);
+}
+
+.trusted-marquee-wrap{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+.trusted-marquee-wrap::before,
+.trusted-marquee-wrap::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+}
+
+.trusted-marquee-wrap::before{
+  left:0;
+  background:linear-gradient(to right,#fff,transparent);
+}
+
+.trusted-marquee-wrap::after{
+  right:0;
+  background:linear-gradient(to left,#fff,transparent);
+}
+
+.trusted-marquee{
+  display:flex;
+  gap:24px;
+  width:max-content;
+  padding:8px 0;
+}
+
+.trusted-marquee-left{
+  animation:trustedMoveLeft 28s linear infinite;
+}
+
+.trusted-marquee-right{
+  animation:trustedMoveRight 28s linear infinite;
+}
+
+.trusted-marquee:hover{
+  animation-play-state:paused;
+}
+
+.trusted-logo-card{
+  width:180px;
+  height:92px;
+  flex:0 0 auto;
+  background:#fff;
+  border:1px solid rgba(207,166,58,.22);
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 28px;
+  box-shadow:0 12px 35px rgba(0,0,0,.06);
+  filter:grayscale(100%);
+  opacity:.72;
+  transition:.35s ease;
+}
+
+.trusted-logo-card img{
+  max-width:100%;
+  max-height:52px;
+  object-fit:contain;
+}
+
+.trusted-logo-card:hover{
+  filter:grayscale(0%);
+  opacity:1;
+  transform:scale(1.08);
+  box-shadow:0 20px 45px rgba(0,0,0,.14);
+  border-color:#cfa63a;
+}
+
+@keyframes trustedMoveLeft{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+@keyframes trustedMoveRight{
+  from{
+    transform:translateX(-50%);
+  }
+  to{
+    transform:translateX(0);
+  }
+}
+
+@media(max-width:768px){
+  .trusted-logo-card{
+    width:145px;
+    height:76px;
+    padding:14px 20px;
+    border-radius:16px;
+  }
+
+  .trusted-logo-card img{
+    max-height:42px;
+  }
+
+  .trusted-marquee{
+    gap:16px;
+  }
+
+  .trusted-marquee-left,
+  .trusted-marquee-right{
+    animation-duration:20s;
+  }
+}
   </style>
 </head>
 
@@ -150,36 +277,467 @@
 </header>
 
 <main>
-  <section class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 pt-3 pb-20">
-    <div class="relative min-h-[560px] lg:min-h-[680px] overflow-hidden rounded-[34px] bg-[#151515] portfolio-reveal">
-      <img src="assets/images/10.jpg" alt="Portfolio coming soon" class="absolute inset-0 w-full h-full object-cover object-center opacity-75">
-      <div class="absolute inset-0 bg-black/25"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/88 via-black/60 to-black/25"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
 
-      <div class="relative z-10 min-h-[560px] lg:min-h-[680px] flex items-center justify-center text-center px-7 md:px-14 py-20">
-        <div class="max-w-4xl">
-          <p class="text-customGold text-[11px] uppercase tracking-[0.6em] font-bold mb-7">
-            Portfolio
-          </p>
+  <!-- PORTFOLIO HERO -->
+  <section class="relative max-w-7xl mx-auto px-6 lg:px-12 pt-6 pb-16">
+    <div class="relative overflow-hidden rounded-[34px] bg-[#151515] min-h-[520px] flex items-center">
+      <img src="assets/images/port-hero.png" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/20"></div>
 
-          <h1 class="font-serif-chic text-white text-[58px] md:text-[96px] lg:text-[112px] leading-[0.9] tracking-[-0.05em]">
-            Coming<br>
-            <span class="italic text-customGold">Soon.</span>
-          </h1>
+      <div class="relative z-10 max-w-3xl px-8 md:px-16 py-20">
+        <p class="text-customGold text-[11px] uppercase tracking-[0.6em] font-bold mb-6">
+          Our Portfolio
+        </p>
 
-          <div class="line-center-grow w-[260px] md:w-[460px] h-[3px] bg-customRed mt-10 mb-9 mx-auto"></div>
+        <h1 class="font-serif-chic text-white text-[54px] md:text-[88px] leading-[0.95] tracking-[-0.04em]">
+          Designed<br>
+          <span class="italic text-customGold">Spaces.</span>
+        </h1>
 
-          <p class="text-white/85 text-[15px] md:text-[18px] leading-[1.9] max-w-2xl mx-auto font-light">
-            Our curated portfolio of luxury interiors, Vastu-inspired spaces, decorative styling, and premium design transformations is being prepared.
-          </p>
-        </div>
+        <div class="w-[220px] md:w-[360px] h-[3px] bg-customRed mt-8 mb-8"></div>
+
+        <p class="text-white/85 text-[15px] md:text-[18px] leading-[1.9] font-light">
+          A curated collection of luxury interiors, Vastu-inspired spaces,
+          premium decor styling and elegant transformations.
+        </p>
       </div>
-
     </div>
   </section>
-</main>
 
+  <!-- FILTER BUTTONS -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-12">
+    <div class="flex flex-wrap justify-center gap-4">
+      <button class="filter-btn active px-6 py-3 rounded-full border border-customGold bg-customGold text-black text-xs font-bold tracking-widest uppercase" data-filter="all">All</button>
+      <button class="filter-btn px-6 py-3 rounded-full border border-customGold text-customGold text-xs font-bold tracking-widest uppercase hover:bg-customGold hover:text-black transition" data-filter="residential">Residential</button>
+      <button class="filter-btn px-6 py-3 rounded-full border border-customGold text-customGold text-xs font-bold tracking-widest uppercase hover:bg-customGold hover:text-black transition" data-filter="commercial">Commercial</button>
+      <button class="filter-btn px-6 py-3 rounded-full border border-customGold text-customGold text-xs font-bold tracking-widest uppercase hover:bg-customGold hover:text-black transition" data-filter="vastu">Vastu</button>
+      <button class="filter-btn px-6 py-3 rounded-full border border-customGold text-customGold text-xs font-bold tracking-widest uppercase hover:bg-customGold hover:text-black transition" data-filter="decor">Decor</button>
+    </div>
+  </section>
+
+ <!-- LUXURY PORTFOLIO CARDS -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 pb-20">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- RESIDENTIAL 1 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="residential">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-livingroom.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Residential</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Luxury Living Room</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi NCR · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Premium modern interior with rich textures, warm lighting and elegant decor details.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- RESIDENTIAL 2 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="residential">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-room.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Residential</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Modern Bedroom Suite</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Noida · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Calm bedroom design with soft tones, premium finishes and warm ambient lighting.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- RESIDENTIAL 3 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="residential">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-kitchen.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Residential</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Elegant Kitchen Design</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Gurugram · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">A modern kitchen planned with smart storage, clean finishes and practical luxury.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- RESIDENTIAL 4 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="residential">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-dining.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Residential</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Premium Dining Area</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Elegant dining setup with warm lighting, premium furniture and refined materials.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- RESIDENTIAL 5 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="residential">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-apartment.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Residential</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Luxury Apartment Interior</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Faridabad · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Complete apartment interior with premium planning, styling and comfortable luxury.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- COMMERCIAL 1 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="commercial">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-office.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Commercial</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Premium Office Space</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Gurugram · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Functional and stylish workspace designed for productivity and brand impression.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- COMMERCIAL 2 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="commercial">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-retail.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Commercial</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Boutique Retail Design</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Premium retail layout focused on display, lighting and customer experience.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- COMMERCIAL 3 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="commercial">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-cafe.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Commercial</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Cafe Interior Concept</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Noida · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">A warm and inviting space designed for comfort, mood and customer experience.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- COMMERCIAL 4 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="commercial">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-workspace.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Commercial</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Studio Workspace</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi NCR · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Creative studio space with practical zoning, clean aesthetics and premium lighting.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- COMMERCIAL 5 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="commercial">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-reception.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Commercial</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Reception Area Design</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Gurugram · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Elegant reception area designed to create a strong first impression.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- VASTU 1 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="vastu">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-vastuhome.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Vastu</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Vastu Inspired Home</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Noida · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Balanced space planning with luxury aesthetics and Vastu-aligned design flow.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- VASTU 2 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="vastu">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-poojaroom.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Vastu</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Peaceful Pooja Room</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">A serene spiritual corner planned with balance, elegance and positive energy flow.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- VASTU 3 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="vastu">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-vastubedroom.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Vastu</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Vastu Bedroom Planning</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Gurugram · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Bedroom planning focused on comfort, calmness and balanced energy movement.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- VASTU 4 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="vastu">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-enterance.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Vastu</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Positive Energy Entrance</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Faridabad · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Entrance design planned for welcoming energy, elegance and a strong first impression.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- VASTU 5 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="vastu">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-vastukitchen.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Vastu</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Balanced Kitchen Layout</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi NCR · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Kitchen layout planned with practical movement, balance and Vastu-friendly zoning.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- DECOR 1 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="decor">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-door.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Decor</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Elegant Decor Styling</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Handpicked styling elements, statement pieces and refined decorative details.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- DECOR 2 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="decor">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-wall.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Decor</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Wall Decor Styling</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Noida · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Statement walls, art pieces and decor accents styled for a refined luxury finish.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- DECOR 3 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="decor">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-furniture.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Decor</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Luxury Furniture Setup</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Faridabad · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Premium furniture placement and styling for a comfortable and elegant space.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- DECOR 4 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="decor">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-light.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Decor</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Premium Lighting Decor</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Delhi NCR · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Lighting decor planned to enhance mood, depth and luxury visual appeal.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- DECOR 5 -->
+    <div class="portfolio-card group bg-white border border-gray-200 rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500" data-category="decor">
+      <div class="relative h-[360px] overflow-hidden">
+        <img src="assets/images/port-art.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+        <span class="absolute top-5 left-5 bg-customGold text-black text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-full">Decor</span>
+        <h3 class="absolute bottom-6 left-6 right-6 font-serif-chic text-white text-[32px] leading-tight">Statement Art Styling</h3>
+      </div>
+      <div class="p-7">
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mb-3">Gurugram · 2026</p>
+        <p class="text-gray-700 text-sm leading-7">Art-led styling with curated pieces that give the space a premium identity.</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-customRed font-bold text-xs uppercase tracking-widest">View Project <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- TRUSTED PARTNERS SECTION -->
+<section class="trusted-partners-section py-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <div class="text-center mb-14">
+      <p class="text-customGold text-[11px] uppercase tracking-[0.6em] font-bold mb-5">
+        Our Trusted Partners
+      </p>
+
+      <h2 class="font-serif-chic text-[#151515] text-[42px] md:text-[68px] leading-tight">
+        Trusted By Leading Brands
+      </h2>
+
+      <p class="text-gray-600 text-sm md:text-base leading-8 max-w-3xl mx-auto mt-5">
+        We proudly collaborate with premium brands, developers, architects
+        and businesses to create timeless luxury interiors.
+      </p>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="trusted-marquee-wrap mb-6">
+      <div class="trusted-marquee trusted-marquee-left">
+
+        <div class="trusted-logo-card"><img src="assets/images/partner-1.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-2.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-3.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-4.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-5.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-6.jpg" alt=""></div>
+
+        <div class="trusted-logo-card"><img src="assets/images/partner-1.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-2.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-3.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-4.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-5.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-6.jpg" alt=""></div>
+
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="trusted-marquee-wrap">
+      <div class="trusted-marquee trusted-marquee-right">
+
+        <div class="trusted-logo-card"><img src="assets/images/partner-7.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-8.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-9.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-1.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-2.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-3.jpg" alt=""></div>
+
+        <div class="trusted-logo-card"><img src="assets/images/partner-7.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-8.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-9.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-1.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-2.jpg" alt=""></div>
+        <div class="trusted-logo-card"><img src="assets/images/partner-3.jpg" alt=""></div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- BEFORE AFTER SECTION -->
+  <section class="bg-[#151515] py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="text-customGold text-[11px] uppercase tracking-[0.6em] font-bold mb-5">
+          Before / After
+        </p>
+        <h2 class="font-serif-chic text-white text-[44px] md:text-[70px] leading-tight">
+          Transforming Ordinary Spaces
+        </h2>
+        <p class="text-white/70 text-sm md:text-base leading-8 mt-6">
+          See how thoughtful design, premium styling and smart planning turn empty spaces into elegant experiences.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="relative rounded-[28px] overflow-hidden group">
+          <img src="assets/images/port-before.png" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="">
+          <div class="absolute inset-0 bg-black/35"></div>
+          <span class="absolute top-6 left-6 bg-white text-black text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full">Before</span>
+        </div>
+
+        <div class="relative rounded-[28px] overflow-hidden group">
+          <img src="assets/images/port-after.png" class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-700" alt="">
+          <div class="absolute inset-0 bg-black/20"></div>
+          <span class="absolute top-6 left-6 bg-customGold text-black text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full">After</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+    <div class="relative overflow-hidden rounded-[34px] bg-customRed px-8 md:px-16 py-16 text-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+      <div class="relative z-10">
+        <p class="text-customGold text-[11px] uppercase tracking-[0.5em] font-bold mb-5">
+          Start Your Project
+        </p>
+        <h2 class="font-serif-chic text-white text-[42px] md:text-[68px] leading-tight mb-6">
+          Let’s Design Your Dream Space
+        </h2>
+        <p class="text-white/85 max-w-2xl mx-auto text-sm md:text-base leading-8 mb-9">
+          From concept to final styling, our team creates elegant, practical and premium interiors tailored to your lifestyle.
+        </p>
+        <a href="contact.html" class="inline-flex items-center gap-3 bg-customGold text-black px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition">
+          Book Consultation <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
 <footer id="clients" class="w-full bg-[#151515] relative pt-6 pb-2 z-10 border-t border-gray-800 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 relative">
     <div class="footer-line-vertical hidden md:block absolute top-[38px] bottom-[118px] left-[28%] w-px bg-[#cfa63a]"></div>
@@ -278,6 +836,32 @@
   }, { threshold: 0.22 });
 
   document.querySelectorAll(".portfolio-reveal,.line-center-grow,.footer-line,.footer-line-vertical,.footer-drop,.social-gold-line").forEach(el => observer.observe(el));
+  const filterBtns = document.querySelectorAll(".filter-btn");
+const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.getAttribute("data-filter");
+
+    filterBtns.forEach(b => {
+      b.classList.remove("active", "bg-customGold", "text-black");
+      b.classList.add("text-customGold");
+    });
+
+    btn.classList.add("active", "bg-customGold", "text-black");
+    btn.classList.remove("text-customGold");
+
+    portfolioCards.forEach(card => {
+      const category = card.getAttribute("data-category");
+
+      if (filter === "all" || category === filter) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
 </script>
 
 </body>
